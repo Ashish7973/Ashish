@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Gupta G!</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-image: url("2.jpeg");
+      background-size: contain;
+    }
+
+    .container {
+      margin-top: 50px;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .game {
+      text-align: center;
+    }
+
+    #congrats {
+      display: none;
+    }
+
+    #gift {
+      display: flex;
+      margin-top: 50px;
+    }
+
+    .gift {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    #fact {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Kese ho Gupta G!</h1>
+    <div class="game">
+      <h2>Chalo Game Khelte H</h2>
+      <button class="btn btn-primary" onclick="playGame()">Start</button>
+      <div id="congrats">
+        <h3>Congratulations on scoring 80% in CBSE 10th board exams!</h3>
+        <h3>Here's your gift:</h3>
+        <div id="gift" class="gift">
+          <img src="simps.jpeg" alt="Family" class="imag">
+          <br>
+          <button class="btn btn-primary" onclick="revealFact()">Reveal a Family Fact</button>
+          <p id="fact" style="display: none;"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function playGame() {
+      var num1 = Math.floor(Math.random() * 10) + 1; // Generate a random number between 1 and 10
+      var num2 = Math.floor(Math.random() * 10) + 1; // Generate another random number between 1 and 10
+      var answer = num1 + num2;
+      var userAnswer = parseInt(prompt("What is " + num1 + " + " + num2 + "?"));
+
+      if (userAnswer === answer) {
+          window.location.href = "newpage.html"; // Replace "newpage.html" with the desired URL of the new page
+      } else {
+        alert("Oops! That's incorrect. Try again.");
+      }
+    }
+  </script>
+</body>
+
+</html>
